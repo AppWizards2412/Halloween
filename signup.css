@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: 'Nosifer', cursive;
+    color: #8f3d16;
+    text-shadow: 3px 7px 3px #250404;
+}
+
+.body2 {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+@media (min-width: 1024px) {
+    .body2 {
+        overflow: hidden;
+    }
+}
+
+input {
+    font-family: 'Open Sans', sans-serif;
+}
+
+input,
+button {
+    outline: none;
+}
+
+/* main background */
+.main_container {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #000;
+    background-image: url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+/* For animation part */
+.main_container .animate {
+    display: inline-block;
+    width: calc(10px * var(--count));
+    height: calc(10px * var(--count));
+    border-radius: calc(5px * var(--count));
+    border: 2px solid #fff5;
+    position: absolute;
+    top: calc(6% * var(--count));
+    left: calc(10% * var(--count));
+    box-shadow: 0 2px 6px #0002, 0 4px 16px #0004;
+    animation-name: move;
+    animation-iteration-count: infinite;
+    animation-delay: calc(0.2s * var(--count));
+    animation-duration: calc(5s * var(--count));
+    animation-fill-mode: both;
+}
+
+/* Circles in the background */
+.main_container .animate:nth-child(1) {
+    background-color: #4E200B;
+}
+
+.main_container .animate:nth-child(2) {
+    background-color: #EB6123;
+}
+
+.main_container .animate:nth-child(3) {
+    background-color: #7B3312;
+}
+
+.main_container .animate:nth-child(4) {
+    background-color: #f44336;
+}
+
+
+/* sighting form */
+.main_container .login_form {
+    display: block;
+    max-width: 500px;
+    width: 100%;
+    padding: 50px 25px;
+    background-image: linear-gradient(45deg, #fff1, #fff3);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 2px outset #fff5;
+    position: relative;
+    box-shadow: 0 2px 6px #0002, 0 5px 16px #0005;
+    color: #d1edf2;
+}
+
+/* title of form */
+.main_container .login_form .login_form_title {
+    font-size: 18px;
+    color: #000;
+}
+
+.main_container .login_form .login_form_title ul li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: inline;
+    color: #fff;
+    background: #ea272d;
+}
+
+.main_container .login_form .group {
+    position: relative;
+    margin-top: 30px;
+}
+
+/* input box in form */
+.main_container .login_form .group input {
+    background-color: #0002;
+    border-radius: 4px;
+    padding: 6px 25px 6px 10px;
+    display: block;
+    width: 100%;
+    box-shadow: -1px 1px 2px #0002 inset;
+    color: #fff;
+    font-size: 16px;
+    border: 1px outset #fff5;
+    transition: border-radius 0.3s;
+}
+
+/* labels of input boxes */
+.main_container .login_form .group label {
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #fffa;
+    transition-property: top, left, color, font-size;
+    transition: 0.3s;
+}
+
+/* icons in input boxes */
+.main_container .login_form .group .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+    text-shadow: 0 0 1px #0007;
+    display: flex;
+    align-items: center; /* Add this line */
+}
+
+/* Add these styles for the eye icons */
+.main_container .login_form .group .toggle-password {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+.main_container .login_form .group label1 {
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #fffa;
+    transition-property: top, left, color, font-size;
+    transition: 0.3s;
+    visibility: hidden;
+}
+
+.main_container .login_form .group input:valid+label,
+.main_container .login_form .group input:focus+label {
+    top: -14px;
+    left: 0;
+    color: #fff;
+    font-size: 12px;
+}
+
+input[type=password]::-ms-browse {
+    border: 2px solid #6c5ce7;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: #a29bfe;
+
+}
+
+input[type=password]::-ms-browse:hover {
+    background-color: #81ecec;
+    border: 2px solid #00cec9;
+}
+
+input[type=email]::-ms-browse {
+    border: 2px solid #6c5ce7;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: #a29bfe;
+}
+
+input[type=email]::-ms-browse:hover {
+    background-color: #81ecec;
+    border: 2px solid #00cec9;
+}
+
+
+/* icons in input boxes */
+.main_container .login_form .group .icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: gray;
+    text-shadow: 0 0 1px #0007;
+}
+
+/* button 1 */
+.main_container .login_form .btn1 {
+    border: none;
+    position: relative;
+    display: inline-block;
+    background: linear-gradient(45deg, #ffffff05, #ffffff61);
+    padding: 8px 25px;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    box-shadow: 0 0 0 4px #fff2;
+    margin: 10px 170px;
+    cursor: pointer;
+    transition-property: transform, background;
+    transition: 0.4s ease-in;
+    z-index: 1;
+}
+
+.main_container .login_form .btn1:hover {
+    background: #EB6123;
+    box-shadow: 0 0 5px #943a11, 0 0 25px #943a11, 0 0 50px, 0 0 200px #943a11;
+}
+
+/* for animation */
+@keyframes move {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    25%,
+    75% {
+        transform: translate(400%, 300%);
+    }
+
+    30%,
+    60%,
+    90% {
+        transform: translate(200%, 500%);
+    }
+
+    20%,
+    40%,
+    80% {
+        transform: translate(500%, 300%);
+    }
+
+    10%,
+    50% {
+        transform: translate(200%, 10%);
+    }
+}
+
+.wrapper {
+    display: inline-flex;
+    backdrop-filter: blur(10px);
+    background-image: linear-gradient(45deg, #fff1, #fff3);
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    border: 2px outset #fff5;
+    padding: 20px 15px;
+    margin-top: 30px;
+    box-shadow: -1px 1px 2px #0002 inset
+}
+
+.wrapper .option {
+    background: rgb(0, 0, 0);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 10px;
+    border: 2px solid black;
+    transition: all 0.3s ease;
+}
+
+.wrapper .option .dot {
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+}
+
+.wrapper .option .dot::before {
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: #000000;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+#option-1:checked:checked~.option-1,
+#option-2:checked:checked~.option-2 {
+    border-color: #8D3C16;
+    background: #8D3C16;
+}
+
+#option-1:checked:checked~.option-1 .dot,
+#option-2:checked:checked~.option-2 .dot {
+    background: #fff;
+}
+
+#option-1:checked:checked~.option-1 .dot::before,
+#option-2:checked:checked~.option-2 .dot::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.wrapper .option span {
+    font-size: 20px;
+    color: #808080;
+}
+
+#option-1:checked:checked~.option-1 span,
+#option-2:checked:checked~.option-2 span {
+    color: #fff;
+}
